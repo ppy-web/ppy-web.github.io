@@ -3,24 +3,136 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>个人空间</title>
-    <style>
-        ul {
-
-            margin: 100px auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 
 <body>
-    <ul>
-        <li><a href="https://ppy-web.github.io/esenbol/">demo1: 设计水果商城</a> </li>
-        <li><a href="https://ppy-web.github.io/pxtechnology/">demo2: 临摹屏芯科技官网</a> </li>
-        <li><a href="https://ppy-web.github.io/cloud/">demo3: 云联数据</a> </li>
-        <li><a href="" style="user-select: none;">更多...</a> </li>
-    </ul>
 
+
+    <div class="myPage">
+        <img src="" class="imgBox">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="nav">
+            <ul>
+                <li><a href="https://ppy-web.github.io/esenbol/">demo1: 设计水果商城</a> </li>
+                <li><a href="https://ppy-web.github.io/pxtechnology/">demo2: 临摹屏芯科技官网</a> </li>
+                <li><a href="https://ppy-web.github.io/cloud/">demo3: 云联数据</a> </li>
+                <li><a href="" style="user-select: none;">更多...</a> </li>
+            </ul>
+        </div>
+        <div class="container"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <footer></footer>
+    </div>
+
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+        L2Dwidget.init({
+            "model": {
+                //jsonpath控制显示那个小萝莉模型，下面这个就是我觉得最可爱的小萝莉模型，替换时后面名字也要替换掉
+                jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json", //最可爱的妹子
+                //jsonPath: "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",  //一只白猫
+                //jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",  //白衣服小萝莉
+                "scale": 1
+            },
+            "display": {
+                "position": "left", //看板娘的表现位置
+                "width": 100, //小萝莉的宽度
+                "height": 200, //小萝莉的高度
+                "hOffset": 0,
+                "vOffset": 0
+            },
+            "mobile": {
+                "show": true,
+                "scale": 0.5
+            },
+            "react": {
+                "opacityDefault": 0.8,
+                "opacityOnHover": 0.2
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            res = $.ajax({
+                url: "https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN",
+                async: false,
+                success: function () {
+                    console.log("请求成功");
+                    $("#btn1").html("已获取")
+                }
+            });
+            let imgObj = $.parseJSON(res.responseText);
+            console.log(imgObj.images[0].url);
+            let imgUrl = "https://cn.bing.com" + imgObj.images[0].url
+            $("#myDiv").html("hello, world!");
+            console.log(imgUrl);
+            $('.imgBox').attr({
+                src: imgUrl
+            });
+        });
+    </script>
 </body>
 
 </html>

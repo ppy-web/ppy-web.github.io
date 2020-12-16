@@ -1,0 +1,18 @@
+ ul {
+  margin: 100px auto;
+ }
+ .myPage{
+    width: 100%;
+    height: 100%;
+ }
+
+ .imgBox{
+     z-index: -99;
+     position: absolute;
+     /* width: 100%;
+     height: 100%; */
+     left: 50%;
+     top: 50%;
+     /* float: left; */
+     transform: translate(-50%, -50%);
+ }
